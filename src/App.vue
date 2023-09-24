@@ -1,5 +1,7 @@
 <script setup>
 import NavbarComponent from './components/NavbarComponent.vue';
+import { useRoute } from 'vue-router';
+const router = useRoute();
 </script>
 
 <template>
@@ -7,7 +9,7 @@ import NavbarComponent from './components/NavbarComponent.vue';
 <NavbarComponent></NavbarComponent>
 
 <div class="container">
-  <router-view></router-view>
+  <router-view :key="$router.fullpath"></router-view>
 </div>
 
 </template>
