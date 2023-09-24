@@ -24,4 +24,15 @@ function getProduct(id){
         })
 }
 
-export {products, getProducts, getProduct,product,item}
+function clearItem(){
+    products.value = '',
+
+    product.title = '',
+    product.price = '',
+    product.brand = '',
+    product.thumbnail = '',
+    product.description = '',
+    item.value = false
+}
+
+export {products, getProducts, getProduct,product,item,clearItem}

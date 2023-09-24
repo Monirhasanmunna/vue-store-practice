@@ -1,13 +1,14 @@
 <script setup>
     import { useRoute } from 'vue-router';
-    import { onMounted,ref,reactive } from 'vue';
+    import { onBeforeMount,ref,reactive } from 'vue';
     import axios from 'axios'
-    import {getProduct,product,item} from '../store/store'
+    import {getProduct,product,item,clearItem} from '../store/store'
 
     const router = useRoute();
     const id = `${router.params.id}`
 
-    onMounted(()=>{
+    onBeforeMount(()=>{
+        clearItem()
         getProduct(id)
     });
 

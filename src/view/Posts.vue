@@ -1,9 +1,10 @@
 <script setup>
     import {onBeforeMount } from 'vue'
     import axios from 'axios'
-    import {products, getProducts} from '../store/store'
+    import {products, getProducts,clearItem} from '../store/store'
 
     onBeforeMount(()=>{
+        clearItem()
         getProducts()
     });
     
